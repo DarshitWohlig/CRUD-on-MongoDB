@@ -33,4 +33,4 @@ app.listen(PORT,function(){
 
 
 //load routers
-app.use('/',require('./server/routes/route'))
+app.use('/',require('./server/routes/route'));

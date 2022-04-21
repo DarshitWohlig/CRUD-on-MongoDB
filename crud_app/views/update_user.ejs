@@ -17,28 +17,27 @@
         </div>
 
         <!--Add user form-->
-                
-        <form id="update_user" method="post">
+        <form method="POST" id="update_user">
             <div class="new_user">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="hidden" name="id" value="">
-                    <input type="text" name="name" value="" placeholder="eg. Darshit Thakker"> 
+                    <input type="hidden" name="id" value="<%= user._id%>">
+                    <input type="text" name="name" value="<%= user.name %>" placeholder="eg. Darshit Thakker"> 
                 </div>
                 <div class="form-group">
-                    <label for="Email">Email</label> 
-                    <input type="text" name="Email" value="" placeholder="eg. DarshitThakker@gmail.com"> 
+                    <label for="email">Email</label> 
+                    <input type="text" name="email" value="<%= user.email%>" placeholder="eg. DarshitThakker@gmail.com"> 
                 </div>
                 <div class="form-group">
                     
                     <div class="radio inline">
-                        <label for="Gender">Gender : </label>
-                        <input id="radio2" type="radio" name="Gender" value="Male"> 
+                        <label for="gender">Gender : </label>
+                        <input id="radio2" type="radio" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>> 
                         <label for="radio2" class="radio-label">Male</label>
                     </div>
                     <div class="radio inline">
                         
-                        <input id="radio3" type="radio" name="Gender" value="Female"> 
+                        <input id="radio3" type="radio" name="gender" value="Female" <%= user.gender == 'Female' ? 'checked' : '' %>> 
                         <label for="radio3" class="radio-label">Female</label>
                     </div>
                 </div>
@@ -46,13 +45,13 @@
                 <div class="form-group">
                     
                     <div class="radio inline">
-                        <label for="Status">Status : </label>
-                        <input id="radio4" type="radio" name="Status" value="Active"> 
+                        <label for="gender">Status : </label>
+                        <input id="radio4" type="radio" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %>> 
                         <label for="radio4" class="radio-label">Active</label>
                     </div>
                     <div class="radio inline">
                         
-                        <input id="radio5" type="radio" name="Status" value="Inactive"> 
+                        <input id="radio5" type="radio" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %>> 
                         <label for="radio5" class="radio-label">Inactive</label>
                     </div>
                 </div>
