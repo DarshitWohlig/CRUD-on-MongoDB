@@ -12,9 +12,7 @@ var schema=new mongoose.Schema({
         unique:true
     },
     gender:String,
-
     status:String
-    
 });
 
 const UserDB=mongoose.model('userdb',schema);
