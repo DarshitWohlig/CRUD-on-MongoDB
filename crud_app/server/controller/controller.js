@@ -51,7 +51,8 @@ exports.find = (req, res)=>{
                 res.status(500).send({ message: "Erro retrieving user with id " + id})
             })
 
-    }else{
+    }
+    else{
         UserDB.find()
             .then(user => {
                 res.send(user)

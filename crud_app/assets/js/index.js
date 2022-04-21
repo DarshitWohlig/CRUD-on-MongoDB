@@ -1,16 +1,19 @@
-$('#add_user').submit(function(event){
-    alert("User Inserted successfully");
+
+$("#add_user").submit(function(event){
+    alert("Data Inserted Successfully!");
 })
 
-$('#update_user').submit(function(event){
+$("#update_user").submit(function(event){
     event.preventDefault();
 
-    var unindexed_array = $('#update_user').serializeArray();   //This will return all the inserted values in a Array then we can use it to update info
-    var data={}
-    $.map(unindexed_array,function(n,i){
+    var unindexed_array = $(this).serializeArray();
+    var data = {}
+
+    $.map(unindexed_array, function(n, i){
         data[n['name']] = n['value']
-    });
-  
+    })
+
+
     var request = {
         "url" : `http://localhost:5000/api/users/${data.id}`,
         "method" : "PUT",
@@ -19,8 +22,9 @@ $('#update_user').submit(function(event){
 
     $.ajax(request).done(function(response){
         alert("Data Updated Successfully!");
-    });
-});
+    })
+
+})
 
 if(window.location.pathname == "/"){
     $ondelete = $(".table tbody td a.delete");
