@@ -23,7 +23,7 @@ exports.create = function(req,res){
     user
     .save(user)
     .then(function(data){
-        res.send(data);
+        //res.send(data);
         res.redirect('/add-user')
     })
     .catch(function(err){
